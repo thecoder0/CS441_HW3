@@ -55,3 +55,4 @@ jitwatch.out
 project/**/metals.sbt
 
 .bsp
+.DS_Store
