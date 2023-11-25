@@ -1,0 +1,184 @@
+{
+	"info": {
+		"_postman_id": "097ffa8c-8175-4198-835e-269e67ca25db",
+		"name": "PoliceThiefGraphGame",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31096386"
+	},
+	"item": [
+		{
+			"name": "Player1",
+			"item": [
+				{
+					"name": "Player1ChoosePoliceman",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/pt-game/player-1/choose-policeman",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"pt-game",
+								"player-1",
+								"choose-policeman"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Player1ChooseThief",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/pt-game/player-1/choose-thief",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"pt-game",
+								"player-1",
+								"choose-thief"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Player1NewPosition",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/pt-game/player-1/move-to/20",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"pt-game",
+								"player-1",
+								"move-to",
+								"20"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Player1WinningPosition",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Player2",
+			"item": [
+				{
+					"name": "Player2ChoosePoliceman",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/pt-game/player-2/choose-policeman",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"pt-game",
+								"player-2",
+								"choose-policeman"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Player2ChooseThief",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/pt-game/player-2/choose-thief",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"pt-game",
+								"player-2",
+								"choose-thief"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Player2NewPosition",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/pt-game/player-2/move-to/10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"pt-game",
+								"player-2",
+								"move-to",
+								"10"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Player2WinningPosition",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "StartGame",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9090/pt-game/start-game",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"pt-game",
+						"start-game"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
