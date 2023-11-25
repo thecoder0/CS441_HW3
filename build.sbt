@@ -59,8 +59,8 @@ run / javaOptions ++= Seq(
   "-XX:+UseG1GC"
 )
 
-Compile / mainClass := Some("com.natalia.Main")
-run / mainClass := Some("com.natalia.Main")
+Compile / mainClass := Some("com.natalia.PTGraphGameServer")
+run / mainClass := Some("com.natalia.PTGraphGameServer")
 
 val jarName = "graphGame.jar"
 assembly / assemblyJarName := jarName

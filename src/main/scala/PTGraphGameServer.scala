@@ -551,7 +551,7 @@ object PTGraphGameServer {
 
   def loadNetGraph(isOriginal: Boolean): NetGraph = {
     val resourcePath = if (isOriginal) Configuration.getOriginalGraphPath else Configuration.getPerturbedGraphPath
-    val netGraphPath = Main.getClass.getResource(resourcePath).getPath
+    val netGraphPath = PTGraphGameServer.getClass.getResource(resourcePath).getPath
     val netGraphLoaded = NetGraph.load(netGraphPath, dir = "")
     val originalOrPerturbedText = if (isOriginal) "ORIGINAL" else "PERTURBED"
 
