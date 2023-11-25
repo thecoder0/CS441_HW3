@@ -13,16 +13,18 @@ val jGraphTlibVersion = "1.5.2"
 val guavaVersion = "31.1-jre"
 val apacheSparkVersion = "3.5.0"
 val scalaXmlVersion = "2.1.0"
+val akkaHttpVersion = "10.5.0"
+val akkaVersion = "2.8.0"
 
 lazy val dependencies = Seq(
-  "com.typesafe.akka" %% "akka-http" % "10.5.0",
-  "com.typesafe.akka" %% "akka-actor-typed" % "2.8.0",
-  "com.typesafe.akka" %% "akka-http-spray-json" % "10.5.0",
+  "com.typesafe.akka" %% "akka-http" % akkaHttpVersion,
+  "com.typesafe.akka" %% "akka-actor-typed" % akkaVersion,
+  "com.typesafe.akka" %% "akka-stream" % akkaVersion,
+  "com.typesafe.akka" %% "akka-http-spray-json" % akkaHttpVersion,
 
   "org.scalatest" %% "scalatest" % scalaTestVersion % Test,
   "org.scalatestplus" %% "mockito-4-2" % "3.2.12.0-RC2" % Test,
   "com.typesafe" % "config" % typeSafeConfigVersion,
-  //  "ch.qos.logback" % "logback-classic" % logbackVersion,
   "guru.nidi" % "graphviz-java" % graphVizVersion,
   "org.jgrapht" % "jgrapht-core" % jGraphTlibVersion,
   "com.google.guava" % "guava" % guavaVersion,
@@ -36,14 +38,11 @@ lazy val root = (project in file("."))
   .settings(
     scalaVersion := "3.2.2",
     name := "CS441_HW3",
-//    idePackagePrefix := Some("com.natalia"),
+    idePackagePrefix := Some("com.natalia"),
     libraryDependencies ++= dependencies
   )
 
 Compile / unmanagedJars += file("lib/netmodelsim.jar")
-
-//// include the 'provided' Spark dependency on the classpath for sbt run
-//Compile / run := Defaults.runTask(Compile / fullClasspath, Compile / run / mainClass, Compile / run / runner).evaluated
 
 scalacOptions ++= Seq(
   "-deprecation", // emit warning and location for usages of deprecated APIs
@@ -63,16 +62,16 @@ run / javaOptions ++= Seq(
 Compile / mainClass := Some("com.natalia.Main")
 run / mainClass := Some("com.natalia.Main")
 
-//val jarName = "randomGraphWalker.jar"
-//assembly / assemblyJarName := jarName
+val jarName = "graphGame.jar"
+assembly / assemblyJarName := jarName
 
 
-////Merging strategies
-//ThisBuild / assemblyMergeStrategy := {
-//  case PathList("META-INF", _*) => MergeStrategy.discard
-//  case "reference.conf" => MergeStrategy.concat
-//  case _ => MergeStrategy.first
-//}
+// Merging strategies
+ThisBuild / assemblyMergeStrategy := {
+  case PathList("META-INF", _*) => MergeStrategy.discard
+  case "reference.conf" => MergeStrategy.concat
+  case _ => MergeStrategy.first
+}
 
 // include the 'provided' Spark dependency on the classpath for sbt run
 Compile / run := Defaults.runTask(Compile / fullClasspath, Compile / run / mainClass, Compile / run / runner).evaluated
