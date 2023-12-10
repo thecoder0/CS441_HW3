@@ -1,0 +1,7 @@
+Student: Natalia Szlaszynski
+
+=> No AWS deployment/Video = -0.5%
+
+Great solution! I would have liked to see this deployed on AWS so that you got full points for your efforts.
+
+Final Grade: 19.5%
